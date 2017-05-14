@@ -1,0 +1,174 @@
+<theme name = "Hatachi">
+<popup_style file_name="Hatachi.tar.gz" />
+<colors>
+	<color1 default="#3D3D3D" opacity="100" />
+	<color2 default="#ffffff" opacity="no" />
+	<color3 default="#5294E2" opacity="no" />
+	<color4 default="#9C9C9C" opacity="no" />
+	<color5 name="Launching background color" default="#5294E2" opacity="100" />
+	<color6 name="Attention background color" default="#FF7D5C" opacity="100" />
+</colors>
+<pixmaps>
+
+	<pixmap_from_file name="led_bar" file="led_bar.png" />
+	<pixmap_from_file name="activeglow" file="hlight.png" />
+
+</pixmaps>
+<button_pixmap gap = "6" aspect_ratio="1" windows_cnt="3"  >
+	<pixmap name="icon">
+		<if size="30:">
+		<get_icon size="-7"  />
+		</if>
+		<if size=":29">
+		<get_icon size="-3" />
+		</if>
+		<correct_size />
+		<if type="mouse_over">	
+			<bright strength="15" />
+		</if>
+	</pixmap>
+	<clear />
+	<if type="active">
+		<correct_size />
+		<pixmap name="active_bg">
+			<fill color="icon_average" opacity="40" />
+			<alpha_mask mask="activeglow" />
+			<composite bg="self" fg="activeglow" opacity="50" />
+		</pixmap>
+		<composite bg="active_bg" fg="self" />
+	</if>
+	<if type="!all_minimized">
+	<if type="!some_minimized">
+	
+	<correct_size />
+		
+	<if type="!launcher" windows="1">
+		<pixmap name="b1">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="100" />
+		</pixmap>
+		<composite bg="self" fg="b1" />
+	</if>
+	<if type="!launcher" windows="2">
+		<pixmap name="b2">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="100" />
+		</pixmap>
+		<composite bg="self" fg="b2" xoffset="5" yoffset="0"  />
+		<composite bg="self" fg="b2" xoffset="-5" yoffset="0"  />
+	</if>
+	<if type="!launcher" windows="3">
+		<pixmap name="b3">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="100" />
+		</pixmap>
+		<composite bg="self" fg="b3" xoffset="10" yoffset="0"  />
+		<composite bg="self" fg="b3" xoffset="-10" yoffset="0"  />
+		<composite bg="self" fg="b3" xoffset="0" yoffset="0"/>
+	</if>
+	</if>
+	</if>
+	<if type="all_minimized"  windows="1">
+		<correct_size />
+		<pixmap name="mini">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="50" />
+		</pixmap>
+		<composite bg="self" fg="mini" />
+	</if>
+	<if type="all_minimized"  windows="2">
+		<correct_size />
+		<pixmap name="mini">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="50" />
+		</pixmap>
+		<composite bg="self" fg="mini" xoffset="5" yoffset="0"  />
+		<composite bg="self" fg="mini" xoffset="-5" yoffset="0"  />
+	</if>
+	<if type="all_minimized"  windows="3">
+		<correct_size />
+		<pixmap name="mini">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="50" />
+		</pixmap>
+		<composite bg="self" fg="mini" xoffset="10" yoffset="0"  />
+		<composite bg="self" fg="mini" xoffset="-10" yoffset="0"  />
+		<composite bg="self" fg="mini" />
+	</if>
+	<if type="some_minimized"  windows="2">
+		<correct_size />
+		<pixmap name="b1">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="100" />
+		</pixmap>
+		<pixmap name="mini">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="50" />
+		</pixmap>
+		<composite bg="self" fg="b1" xoffset="5" yoffset="0"  />
+		<composite bg="self" fg="mini" xoffset="-5" yoffset="0"  />
+	</if>
+	<if type="some_minimized"  windows="3">
+		<correct_size />
+		<pixmap name="b1">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="100" />
+		</pixmap>
+		<pixmap name="mini">
+			<alpha_mask mask="led_bar" />
+			<composite bg="self" fg="led_bar" opacity="50" />
+		</pixmap>
+		<composite bg="self" fg="mini" xoffset="10" yoffset="0"  />
+		<composite bg="self" fg="mini" xoffset="-10" yoffset="0"  />
+		<composite bg="self" fg="b1" />
+	</if>
+	<if type="launcher">
+		<if type="launching">
+			<correct_size />
+			<pixmap name="active_bg">
+				<fill color="color5" opacity="color5" />
+				<alpha_mask mask="activeglow" />
+				<composite bg="self" fg="activeglow" opacity="20" />
+			</pixmap>
+			<composite bg="active_bg" fg="self" />
+		</if>
+	</if>
+	<if type="mouse_over">	
+			<bright strength="15" />
+	</if>
+	<if type="blink">
+		<correct_size />
+		<pixmap name="active_bg">
+			<fill color="color6" opacity="color6" />
+			<alpha_mask mask="activeglow" />
+			<composite bg="self" fg="activeglow" opacity="60" />
+		</pixmap>
+		<composite bg="active_bg" fg="self" />
+
+		
+	</if>
+	<if type="needs_attention">
+		<correct_size />
+		<pixmap name="active_bg">
+			<fill color="color6" opacity="color6" />
+			<alpha_mask mask="activeglow" />
+			<composite bg="self" fg="activeglow" opacity="60"  />
+		</pixmap>
+		<composite bg="self" fg="active_bg" />
+
+		
+	</if>
+	<if orient="left">
+		<rotate angle="90" />
+	</if>
+	<if orient="right">
+		<rotate angle="-90" />
+	</if>
+	<if orient="up">
+		<rotate angle="180" />
+	</if>
+	<composite bg="self" fg="icon" />
+
+	
+</button_pixmap>
+</theme>
