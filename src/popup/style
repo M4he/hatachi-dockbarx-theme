@@ -155,9 +155,9 @@ close_button_size=14
 
 close_button_roundness=7
 
-close_button_bg_color="#B3B3B3"
+close_button_bg_color="#919191"
 close_button_bg_alpha=100
-close_button_x_color="#C0C0C0"
+close_button_x_color="#919191"
 close_button_x_alpha=100
 
 close_button_hover_bg_color="#F25157"
